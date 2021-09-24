@@ -5,19 +5,15 @@
     </head>
     <body>
         <header>
-            <h1><a href="/">Code with Dungy Blog</a></h1>
-        </header>
+    <h1><a href="http://erickk.pythonanywhere.com/">Code With Dungy</a></h1>
+</header>
 
-        <article>
-            <time>published: 23.09.2021, 02:11</time>
-            <h2><a href="">My first post</a></h2>
-            <p>My First Django Blog Post</p>
-        </article>
-
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Really liking this python django framework</p>
-        </article>
+{% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
     </body>
 </html>
